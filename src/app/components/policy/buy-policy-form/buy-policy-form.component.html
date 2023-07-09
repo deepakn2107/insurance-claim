@@ -1,1 +1,115 @@
-<p>buy-policy-form works!</p>
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form class="insurance-form">
+            <h2>Buy Insurance Policy</h2>
+          
+            <div class="form-group">
+              <label for="fullName">Full Name:</label>
+              <input type="text" id="fullName" name="fullName" class="form-control" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="dateOfBirth">Date of Birth:</label>
+              <input type="date" id="dateOfBirth" name="dateOfBirth" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" class="form-control" required>
+              </div>
+          
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select id="gender" name="gender" class="form-control" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number:</label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" required>
+            </div>
+          
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="nationality">Nationality</label>
+                <input type="text" id="nationality" name="nationality" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Policy Type</label>
+                <div class="radio-options">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="policyType" id="lifeInsurance" value="life">
+                    <label class="form-check-label" for="lifeInsurance">Life Insurance</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="policyType" id="autoInsurance" value="auto">
+                    <label class="form-check-label" for="autoInsurance">Auto Insurance</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="policyType" id="healthInsurance" value="health">
+                    <label class="form-check-label" for="healthInsurance">Health Insurance</label>
+                  </div>
+                </div>
+              </div>
+            <div class="form-group">
+                <label>Policy Cover</label>
+                <div class="checkbox-options">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="self" name="policyCover" value="life">
+                    <label class="form-check-label" for="self">Self</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="spouse" name="policyCover" value="auto">
+                    <label class="form-check-label" for="spose">Spouse</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="son" name="policyCover" value="health">
+                    <label class="form-check-label" for="son">Son</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="daughter" name="policyCover" value="health">
+                    <label class="form-check-label" for="daughter">Daughter</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="father" name="policyCover" value="health">
+                    <label class="form-check-label" for="father">Father</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="mother" name="policyCover" value="health">
+                    <label class="form-check-label" for="mother">Mother</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fatherinlaw" name="policyCover" value="health">
+                    <label class="form-check-label" for="fatherinlaw">Father In Law</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="motherinlaw" name="policyCover" value="health">
+                    <label class="form-check-label" for="motherinlaw">Mother In Law</label>
+                  </div>
+                </div>
+              </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <br><br>
+            <button type="submit" class="btn btn-primary" (click)="backtoDashboard()">Back</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  
