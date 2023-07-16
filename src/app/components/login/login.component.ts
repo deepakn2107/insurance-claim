@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { InsuranceServiceService } from 'src/app/services/insurance-service.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,10 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
 loginForm!: FormGroup;
-constructor(private router:Router){
+constructor(
+  private router:Router,
+  private insuarnceService: InsuranceServiceService,
+  ){
   this.loginForm = new FormGroup({
     email: new FormControl(),
     password: new FormControl()
@@ -19,8 +23,17 @@ constructor(private router:Router){
 onSubmit(){
   console.log(`Logging the login form data ${JSON.stringify(this.loginForm.value)}`, );
   console.log(`Logging ${this.loginForm.get('email')?.value}`);
-  
-  this.router.navigate(['/dashboard'])
+  const data = this.loginForm.value;
+  this.insuarnceService.loginDetails({
+    email: data.email,
+    password: data.password
+  }).subscribe({
+    next:(response)=>{
+      if(response.success == true){
+        this.router.navigate(['/dashboard'])
+      }
+    }
+  })
 }
 }
  

@@ -10,13 +10,13 @@
     <div class="col-md-6">
       <form class="insurance-form" [formGroup]="buyPolicyform"  autocomplete="off">
         <div class="form-group">
-          <h2>Buy Insurance Policy:</h2>
+          <h2>Enter details</h2>
         </div>
         
 
         <div class="form-group">
           <label for="fullName">Full Name:</label>
-          <input type="text" id="fullName" name="fullName" formControlName="firstName" class="form-control" required>
+          <input type="text" id="fullName" name="fullName" formControlName="fullname" class="form-control" required>
         </div>
 
         <div class="form-group">
@@ -60,7 +60,7 @@
           <label for="address">Address</label>
           <input type="text" id="address" name="address" class="form-control" formControlName="address" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label>Policy Type</label>
           <div class="radio-options">
             <div class="form-check">
@@ -79,52 +79,52 @@
               <label class="form-check-label" for="healthInsurance">Health Insurance</label>
             </div>
           </div>
-        </div>
-        <!-- <div class="form-group">
+        </div> -->
+        <div class="form-group">
           <label>Policy Cover</label>
           <div class="checkbox-options">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="self" name="policyCover" formControlName="policyCover"
-                value="life">
+              <input class="form-check-input" type="radio" id="self" name="policyCover" formControlName="policyCover"
+                value="self">
               <label class="form-check-label" for="self">Self</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="spouse" name="policyCover" formControlName="policyCover"
-                value="auto">
+              <input class="form-check-input" type="radio" id="spouse" name="policyCover" formControlName="policyCover"
+                value="spouse">
               <label class="form-check-label" for="spouse">Spouse</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="son" name="policyCover" formControlName="policyCover"
-                value="health">
+              <input class="form-check-input" type="radio" id="son" name="policyCover" formControlName="policyCover"
+                value="son">
               <label class="form-check-label" for="son">Son</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="daughter" name="policyCover"
-                formControlName="policyCover" value="health">
+              <input class="form-check-input" type="radio" id="daughter" name="policyCover"
+                formControlName="policyCover" value="daughter">
               <label class="form-check-label" for="daughter">Daughter</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="father" name="policyCover"
-                formControlName="policyCover" value="health">
+              <input class="form-check-input" type="radio" id="father" name="policyCover"
+                formControlName="policyCover" value="father">
               <label class="form-check-label" for="father">Father</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="mother" name="policyCover"
-                formControlName="policyCover" value="health">
+              <input class="form-check-input" type="radio" id="mother" name="policyCover"
+                formControlName="policyCover" value="mother">
               <label class="form-check-label" for="mother">Mother</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="fatherinlaw" name="policyCover"
-                formControlName="policyCover" value="health">
+              <input class="form-check-input" type="radio" id="fatherinlaw" name="policyCover"
+                formControlName="policyCover" value="fatherinlaw">
               <label class="form-check-label" for="fatherinlaw">Father In Law</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="motherinlaw" name="policyCover"
-                formControlName="policyCover" value="health">
+              <input class="form-check-input" type="radio" id="motherinlaw" name="policyCover"
+                formControlName="policyCover" value="motherinlaw">
               <label class="form-check-label" for="motherinlaw">Mother In Law</label>
             </div>
           </div>
-        </div> -->
+        </div>
 
         <button type="submit" class="btn btn-primary" [disabled]="buyPolicyform.invalid" (click)="onSubmit()" >Submit</button>
         <br><br><br><br>

@@ -10,13 +10,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(229, 234, 238);
+    background-color: aliceblue;
     padding: 20px;
   }
   
   .left-section img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
   }
   
   .right-section {
@@ -32,7 +32,7 @@
     font-size: 28px;
     font-weight: 800;
     text-align: center;
-    color: rgb(125, 183, 238);
+    color:#13366c;
   }
   
   form {

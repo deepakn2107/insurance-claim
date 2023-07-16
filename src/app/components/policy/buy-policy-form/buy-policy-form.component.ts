@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { InsuranceServiceService } from 'src/app/services/insurance-service.service';
 
 @Component({
   selector: 'app-buy-policy-form',
@@ -10,9 +11,12 @@ import { Router } from '@angular/router';
 export class BuyPolicyFormComponent {
   buyPolicyform: FormGroup;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private insuarnceService: InsuranceServiceService,
+    ) {
     this.buyPolicyform = new FormGroup({
-      firstName: new FormControl(),
+      fullname: new FormControl(),
       dob: new FormControl(),
       age: new FormControl(),
       gender: new FormControl(),
@@ -20,16 +24,30 @@ export class BuyPolicyFormComponent {
       emailaddress: new FormControl(),
       nationality: new FormControl(),
       address: new FormControl(),
-      Insurance: new FormControl(),
-      // policyCover: new FormControl(),
+      // Insurance: new FormControl(),
+      policyCover: new FormControl(),
     });
   }
 
   onSubmit() {
     console.log('Logging the buyPolicyform data:', this.buyPolicyform.value);
+    const data = this.buyPolicyform.value;
+    // const policyCoverData = this.buyPolicyform.get('policyCover')?.value;
+        // console.log('Policy Cover Data:', policyCoverData);
+    this.insuarnceService.buyPolicyDetails({
+      fullname: data.fullname,
+      dob: data.dob,
+      age: data.age,
+      gender: data.gender,
+      phonenumber: data.phonenumber,
+      emailaddress: data.emailaddress,
+      nationality: data.nationality,
+      address: data.address,
+      // Insurance: new FormControl(),
+      policyCover: data.policyCover,
 
-    const policyCoverData = this.buyPolicyform.get('policyCover')?.value;
-    console.log('Policy Cover Data:', policyCoverData);
+
+    })
   }
 
   
