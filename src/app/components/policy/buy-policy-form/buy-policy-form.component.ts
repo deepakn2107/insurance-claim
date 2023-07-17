@@ -48,6 +48,7 @@ export class BuyPolicyFormComponent {
 
 
     })
+    this.router.navigate(['buypolicy-lists']);
   }
 
   

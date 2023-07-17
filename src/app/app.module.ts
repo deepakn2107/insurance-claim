@@ -14,6 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { BuyPolicyFormComponent } from './components/policy/buy-policy-form/buy-policy-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BuypolicyListComponent } from './components/policy/buypolicy-list/buypolicy-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     DashboardComponent,
     NavbarComponent,
-    BuyPolicyFormComponent
+    BuyPolicyFormComponent,
+    BuypolicyListComponent
   ],
   imports: [
     BrowserModule,
