@@ -1,12 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ClaimPolicy, LoginDetails, RegisterDetails } from '../models/login-register-models';
+import { ClaimPolicy, CreatePolicy, LoginDetails, RegisterDetails } from '../models/login-register-models';
 import { BuyPolicyDetails } from '../models/buyPolicy-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InsuranceServiceService {
+  
+createPolicy(policy:CreatePolicy) {
+console.log(JSON.stringify(policy));
+    
+    return this.http.post<{
+      success: Boolean;
+      message: string;
+      data: any
+    }>(`${this.apiURL}createpolicy`, policy)
+  }
   claimPolicy(claimPolicy: ClaimPolicy) {
     console.log(`Loggin the data for claimPOlicy form service file: ${JSON.stringify(claimPolicy)}`);
     return this.http.post<{

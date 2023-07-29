@@ -15,5 +15,20 @@ export interface RegisterDetails{
 export interface ClaimPolicy{
     policyNumber: string,
     claimAmount: number,
+    claimerName:string,
     reason: string,
+    claimDate:string
+    
+}
+
+export interface CreatePolicy{
+    emailaddress:string,
+    name: string,
+      coverage: number,
+      premium: number,
+      startDate: string,
+      endDate: string,
+      waitingPeriod: number,
+      networkHospitals: number,
+      maternityCoverage: boolean
 }

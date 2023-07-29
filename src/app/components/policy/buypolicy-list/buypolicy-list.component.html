@@ -2,62 +2,20 @@
 <main>
   <section class="policy-list">
     <h1>Compare Health Insurance Policies</h1>
-    <div class="policy-card">
+    <div class="policy-card" *ngFor="let policy of policies">
       <div class="policy-header">
-        <h2>Comprehensive Health Shield</h2>
-        <button class="btn btn-primary">Get Quote</button>
+        <h2>{{ policy.name }}</h2>
+        <button class="btn btn-primary" (click)="createPolicy(policy)">Buy Policy</button>
       </div>
       <div class="policy-info">
-        <!-- <p>Policy details go here...</p> -->
-        <p>Policy Coverage: Up to ₹5,00,000</p>
-        <p>Annual Premium: ₹10,000</p>
-        <p>Waiting Period: 2 years</p>
-        <p>Network Hospitals: 500+</p>
-        <p>Maternity Coverage: Yes</p>
+        <p>Policy Coverage: Up to ₹{{ policy.coverage }}</p>
+        <p>Annual Premium: ₹{{ policy.premium }}</p>
+        <p>Start Date: {{ policy.startDate }}</p>
+        <p>End Date: {{ policy.endDate }}</p>
+        <p>Waiting Period: {{ policy.waitingPeriod }} years</p>
+        <p>Network Hospitals: {{ policy.networkHospitals }}+</p>
+        <p>Maternity Coverage: {{ policy.maternityCoverage ? 'Yes' : 'No' }}</p>
       </div>
     </div>
-    <div class="policy-card">
-      <div class="policy-header">
-        <h2>Family Floater Plan</h2>
-        <button class="btn btn-primary">Get Quote</button>
-      </div>
-      <div class="policy-info">
-        <!-- <p>Policy details go here...</p> -->
-        <p>Policy Coverage: Up to ₹8,00,000</p>
-        <p>Annual Premium: ₹12,000</p>
-        <p>Waiting Period: 1 year</p>
-        <p>Network Hospitals: 800+</p>
-        <p>Maternity Coverage: No</p>
-      </div>
-    </div>
-    <div class="policy-card">
-      <div class="policy-header">
-        <h2>Senior Citizens Care</h2>
-        <button class="btn btn-primary">Get Quote</button>
-      </div>
-      <div class="policy-info">
-        <!-- <p>Policy details go here...</p> -->
-        <p>Policy Coverage: Up to ₹7,50,000</p>
-        <p>Annual Premium: ₹15,000</p>
-        <p>Waiting Period: 1 year</p>
-        <p>Network Hospitals: 400+</p>
-        <p>Maternity Coverage: No</p>
-      </div>
-    </div>
-    <div class="policy-card">
-      <div class="policy-header">
-        <h2>Corporate Wellness Plan</h2>
-        <button class="btn btn-primary">Get Quote</button>
-      </div>
-      <div class="policy-info">
-        <!-- <p>Policy details go here...</p> -->
-        <p>Policy Coverage: Up to ₹15,00,000</p>
-        <p>Annual Premium: ₹20,000</p>
-        <p>Waiting Period: None</p>
-        <p>Network Hospitals: 1000+</p>
-        <p>Maternity Coverage: Yes</p>
-      </div>
-    </div>
-    <!-- Add more policy cards as needed -->
   </section>
 </main>

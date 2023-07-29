@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { InsuranceServiceService } from 'src/app/services/insurance-service.service';
+import { InsuranceServiceService,  } from 'src/app/services/insurance-service.service';
+import { SharedService } from 'src/app/services/shared.services';
 
 @Component({
   selector: 'app-buy-policy-form',
@@ -14,7 +15,7 @@ export class BuyPolicyFormComponent {
   constructor(
     private router: Router,
     private insuarnceService: InsuranceServiceService,
-    ) {
+    @Inject(SharedService) private sharedService: SharedService    ) {
     this.buyPolicyform = new FormGroup({
       fullname: new FormControl(),
       dob: new FormControl(),
@@ -48,6 +49,9 @@ export class BuyPolicyFormComponent {
 
 
     })
+
+    localStorage.setItem('email', data.emailaddress);
+    this.sharedService.setEmail(data.emailaddress);
     this.router.navigate(['buypolicy-lists']);
   }
 
