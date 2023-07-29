@@ -32,6 +32,9 @@ onSubmit(){
       if(response.success == true){
         this.router.navigate(['/dashboard'])
       }
+      else{
+        window.alert(response.message)
+      }
     }
   })
 }
