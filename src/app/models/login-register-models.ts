@@ -11,3 +11,9 @@ export interface RegisterDetails{
     password:string;
 
 }
+
+export interface ClaimPolicy{
+    policyNumber: string,
+    claimAmount: number,
+    reason: string,
+}

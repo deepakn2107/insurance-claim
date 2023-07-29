@@ -11,4 +11,9 @@ constructor(private router: Router){}
 
 policyForm(){
   this.router.navigate(['/policyForm'])}
+
+  claimPolicy(){
+    this.router.navigate(['/claim-policy'])
+  }
 }
+
