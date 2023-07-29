@@ -2,7 +2,7 @@
 <app-navbar></app-navbar>
 <div class="claim-form">
     <h2>Claim Self Mediclaim Insurance</h2>
-    <form (ngSubmit)="submitClaimForm()" #claimForm="ngForm">
+    <form (ngSubmit)="submitClaimForm()" [formGroup]="claimForm">
       <div class="form-group">
         <label for="policyNumber">Policy Number:</label>
         <input
@@ -10,12 +10,11 @@
           id="policyNumber"
           name="policyNumber"
           required
-          [(ngModel)]="claimData.policyNumber"
-          #policyNumber="ngModel"
+          formControlName="policyNumber"
         />
-        <div class="error-message" *ngIf="policyNumber.invalid && policyNumber.touched">
+        <!-- <div class="error-message" *ngIf="policyNumber.invalid && policyNumber.touched">
           Policy Number is required.
-        </div>
+        </div> -->
       </div>
   
       <div class="form-group">
@@ -25,12 +24,11 @@
           id="claimAmount"
           name="claimAmount"
           required
-          [(ngModel)]="claimData.claimAmount"
-          #claimAmount="ngModel"
+          formControlName="claimAmount"
         />
-        <div class="error-message" *ngIf="claimAmount.invalid && claimAmount.touched">
+        <!-- <div class="error-message" *ngIf="claimAmount.invalid && claimAmount.touched">
           Please enter a valid Claim Amount.
-        </div>
+        </div> -->
       </div>
   
       <div class="form-group">
@@ -39,12 +37,11 @@
           id="reason"
           name="reason"
           required
-          [(ngModel)]="claimData.reason"
-          #reason="ngModel"
+          formControlName="reason"
         ></textarea>
-        <div class="error-message" *ngIf="reason.invalid && reason.touched">
+        <!-- <div class="error-message" *ngIf="reason.invalid && reason.touched">
           Reason for Claim is required.
-        </div>
+        </div> -->
       </div>
   
       <div class="form-group">
@@ -52,11 +49,11 @@
       </div>
     </form>
   
-    <div class="claim-result" *ngIf="claimSubmitted">
+    <!-- <div class="claim-result" *ngIf="claimSubmitted">
       <h3>Claim Submitted Successfully!</h3>
       <p>Policy Number: {{ claimData.policyNumber }}</p>
       <p>Claim Amount: {{ claimData.claimAmount }}</p>
       <p>Reason: {{ claimData.reason }}</p>
-    </div>
+    </div> -->
   </div>
   

@@ -1,4 +1,7 @@
+import { JSDocComment } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { InsuranceServiceService } from 'src/app/services/insurance-service.service';
 
 @Component({
   selector: 'app-claimpolicy',
@@ -6,19 +9,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./claimpolicy.component.css']
 })
 export class ClaimpolicyComponent {
-  claimData = {
-    policyNumber: '',
-    claimAmount: null,
-    reason: ''
+  claimForm: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private insuarnceService: InsuranceServiceService,
+    ) {
+    this.claimForm = new FormGroup({
+      policyNumber: new FormControl(),
+      claimAmount: new FormControl(),
+      reason: new FormControl(),
+    })
   }
 
-  claimSubmitted = false;
+  ngOnInit(): void {
+    // Initialize the form with default values and validators
+    this.claimForm = this.formBuilder.group({
+      policyNumber: ['', Validators.required],
+      claimAmount: [null, [Validators.required, Validators.min(0)]],
+      reason: ['', Validators.required],
+    });
+  }
 
-  submitClaimForm() {
-    // You can perform additional validations here before submitting the claim
-    // For example, you can check if the policy number is valid, or the claim amount is within a certain range.
-    
-    // For this example, we'll simply mark the form as submitted.
-    this.claimSubmitted = true;
+  submitClaimForm(): void {
+   const data = this.claimForm.value;
+
+   this.insuarnceService.claimPolicy({
+    policyNumber: data.policyNumber,
+      claimAmount: data.claimAmount,
+      reason: data.reason,
+   })
+
+   console.log(`Logigng the data for claim policy ${JSON.stringify(data)}`);
+   
+
   }
 }
